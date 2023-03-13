@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './Pages/HomePage';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+interface State {
+
+}
+
+class App extends Component<{}, State> {
+
+
+  render() {
+    return <div>
+        <Routes>
+          <Route path='/' element={<HomePage></HomePage>} />
+        </Routes>
     </div>
-  );
+  }
 }
 
 export default App;
