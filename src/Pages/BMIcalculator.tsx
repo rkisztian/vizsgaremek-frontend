@@ -8,12 +8,12 @@ interface State{
 
 }
 
-export default class ContactPage extends Component<{}, State> {
-    
+export default class BMIcalculator extends Component<{}, State> {
+
 
     render(){
         return <div>
-            <Header />
+            <Header/>
             <Footer />
         </div>
     }
