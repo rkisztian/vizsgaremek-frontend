@@ -14,7 +14,7 @@ export default class Header extends Component<{}>{
     
     render(): ReactNode {
 
-    return <Navbar style={{backgroundColor: "#8aecff"}} expand="lg" collapseOnSelect>
+    return <Navbar style={{backgroundColor: "#b1f2ff"}} expand="lg" collapseOnSelect>
             <Navbar.Brand href="/"><img src={Logo} style={{width:"50%"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>

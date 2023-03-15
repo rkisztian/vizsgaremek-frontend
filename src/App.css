@@ -1,11 +1,9 @@
-.page{
-  background-color: aqua;
-}
+
 
 
 .RegForm{
   text-align: center;
-  margin: 200px;
+  margin: 250px;
 }
 
 .RegForm input{
@@ -15,5 +13,6 @@
 }
 
 .RegForm button{
-  
+  border-radius: 10px;
 }
+
