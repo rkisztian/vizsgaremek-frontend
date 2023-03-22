@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 
 
 interface State{
+  message: string[];
   newUsername: string;
   newEmail: string;
   newPassword: string;
@@ -16,6 +18,7 @@ export default class RegisterPage extends Component<{}, State>{
   
   
   this.state = {
+    message: [],
     newUsername: "",
     newEmail: "",
     newPassword: "",
@@ -33,18 +36,28 @@ export default class RegisterPage extends Component<{}, State>{
     passwordAgain: newPasswordAgain,
   }
 
-  await fetch ('http://localhost:3000/auth/register',{
+  let response = await fetch ('http://localhost:3000/auth/register',{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'},
     body: JSON.stringify(adat)
-  });  
+  });
+  
+  if(response.ok){
+    this.setState({
+      newUsername: "",
+    newEmail: "",
+    newPassword: "",
+    newPasswordAgain: "",
+    })
+    this.setState({message: ['Sikeres Regisztráció']})
+  }
   }
     
 
   render(){
     const {newUsername, newEmail, newPassword, newPasswordAgain} = this.state;
-    return <div className='page'>
+    return <div>
       <Header />
       <section className='RegForm'>
       <form>
@@ -63,9 +76,13 @@ export default class RegisterPage extends Component<{}, State>{
         <div className='form-outline mb-4'>
           <input type="password" value={newPasswordAgain} placeholder="Jelszó ismét" onChange={e => this.setState({ newPasswordAgain : e.currentTarget.value})}/><br/>
         </div>
-
+        <div className='form-outline mb-4'>
+          <p>Van már fiókod, jelentkez be  <Link to='/login'>Itt</Link> !</p>
+        </div>
 
         <button onClick={this.newUser} className="button" >Regisztáció</button>
+
+
 
       </form>
        

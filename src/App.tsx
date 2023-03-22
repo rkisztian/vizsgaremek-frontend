@@ -8,6 +8,7 @@ import AboutusPage from './Pages/AboutusPage';
 import Caloriecalculator from './Pages/CalorieCalculator';
 import BMIcalculator from './Pages/BMIcalculator';
 import RegisterPage from './Pages/RegisterPage';
+import LoginPage from './Pages/LoginPage';
 
 interface State {
 
@@ -25,6 +26,7 @@ class App extends Component<{}, State> {
           <Route path='/kaloria' element={<Caloriecalculator></Caloriecalculator>} />
           <Route path='/bmi' element={<BMIcalculator></BMIcalculator>} />
           <Route path='/register' element={<RegisterPage></RegisterPage>} />
+          <Route path='/login' element={<LoginPage></LoginPage>} />
         </Routes>
     </div>
   }
