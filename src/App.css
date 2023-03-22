@@ -1,6 +1,4 @@
-
-
-
+/*------Register Form-----*/
 .RegForm{
   text-align: center;
   margin: 250px;
@@ -14,5 +12,54 @@
 
 .RegForm button{
   border-radius: 10px;
+  
 }
 
+/*------Login From-----*/
+.LogForm{
+  text-align: center;
+  margin: 200px;
+}
+
+.LogForm input{
+  border-radius: 10px;
+  width: 300px;
+  margin: 10px;
+  
+}
+
+.LogForm form{
+  border: 1px solid #8aecff;
+  border-radius: 5px;
+}
+
+.LogForm button{
+  border-radius: 10px;
+  
+}
+
+/*Navbar*/
+
+.header{
+  border-bottom: 2px solid #8aecff;
+}
+
+/*-----BMI Page-----*/
+
+.BMIPage {
+  text-align: center;
+  margin: 60px;
+}
+
+.BMIPage input {
+  padding-right: 10px;
+}
+
+.BMIPage p {
+  margin-left: 10px;
+}
+
+table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}

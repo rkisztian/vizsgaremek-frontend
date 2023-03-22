@@ -14,10 +14,12 @@ export default class Header extends Component<{}>{
     
     render(): ReactNode {
 
-    return <Navbar style={{backgroundColor: "#b1f2ff"}} expand="lg" collapseOnSelect>
+    return <section className="header">
+        <Navbar expand="lg" collapseOnSelect>
             <Navbar.Brand href="/"><img src={Logo} style={{width:"50%"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
+
                 <Nav className="me-ato">
                     <Nav.Link href="/">Főoldal</Nav.Link>
                     <Nav.Link href="/rolunk">Rólunk</Nav.Link>
@@ -27,6 +29,7 @@ export default class Header extends Component<{}>{
                         <NavDropdown.Item href="/bmi">BMI Kalkulátor</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
+
             </Navbar.Collapse>
             <Nav className="me-auto">
             <Navbar.Collapse className="justify-content-end">
@@ -35,5 +38,6 @@ export default class Header extends Component<{}>{
             </Navbar.Collapse>
             </Nav>
         </Navbar>
+        </section>
     }
 }
