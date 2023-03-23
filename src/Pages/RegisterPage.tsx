@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
-
+import Logo from '../Images/sky_fitness_logo.png';
 
 interface State{
   message: string[];
@@ -61,6 +61,7 @@ export default class RegisterPage extends Component<{}, State>{
       <Header />
       <section className='RegForm'>
       <form>
+        <img src={Logo} alt="Sky Fitness Logo" style={{width: '250px'}}></img>
         <div className='form-outline mb-4'>
           <input type="text" value={newUsername} placeholder='Felhasználónév' onChange={e => this.setState({ newUsername : e.currentTarget.value})}/>
         </div>
