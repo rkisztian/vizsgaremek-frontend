@@ -16,7 +16,7 @@ export default class Header extends Component<{}>{
 
     return <section className="header">
         <Navbar expand="lg" collapseOnSelect>
-            <Navbar.Brand href="/"><img src={Logo} style={{width:"50%"}}/></Navbar.Brand>
+            <Navbar.Brand href="/"><img src={Logo} style={{width:"70%"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
 
