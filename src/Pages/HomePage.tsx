@@ -23,14 +23,16 @@ export default class HomePage extends Component<{}, State> {
 
         return <div>
             <Header/>
-            <Container>
-                <h2>Izomcsoportok</h2>
-                <CardGroup>
+            <Container className="izmok">
+                <br />
+                <h1 style={{textAlign: "center"}}>Izomcsoportok</h1>
+                <br />
+                <CardGroup className="text-center">
 
 
 
-                    <Card>
-                        <Card.Img variant="top" src={Karizom} style={{width: "200px"}}/>
+                    <Card >
+                        <Card.Img  variant="top" src={Karizom} style={{width: "200px"}}/>
                         <Card.Body>
                             <Card.Title>Karizmok</Card.Title>
                             <Card.Text>
@@ -38,7 +40,7 @@ export default class HomePage extends Component<{}, State> {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <button>Feladatok</button>
+                        <a href="/arm"><button>Feladatok</button></a>
                         </Card.Footer>
                     </Card>
 
@@ -53,7 +55,7 @@ export default class HomePage extends Component<{}, State> {
                             </Card.Text>
                         </Card.Body>
                         <Card.Footer>
-                            <button>Feladatok</button>
+                            <a href="/"><button>Feladatok</button></a>
                         </Card.Footer>
                     </Card>
 
@@ -73,7 +75,7 @@ export default class HomePage extends Component<{}, State> {
                     </Card>
                 </CardGroup>
 
-                <CardGroup>
+                <CardGroup className="text-center">
                 <Card>
                         <Card.Img variant="top" src={Hasizom} style={{width: "200px"}}/>
                         <Card.Body>
@@ -102,7 +104,10 @@ export default class HomePage extends Component<{}, State> {
 
                 </CardGroup>
 
+                
+
             </Container>
+            <br />
             <Footer />
         </div>
     }
