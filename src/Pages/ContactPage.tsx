@@ -13,8 +13,7 @@ export default class ContactPage extends Component<{}, State> {
 
     render(){
         return <div>
-            <Header />
-            <Footer />
+
         </div>
     }
 }

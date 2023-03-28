@@ -12,8 +12,7 @@ export default class Caloriecalculator extends Component<{}, State> {
 
     render(){
         return <div>
-            <Header/>
-            <Footer />
+
         </div>
     }
 }

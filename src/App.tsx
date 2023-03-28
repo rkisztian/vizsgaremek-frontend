@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import ContactPage from './Pages/ContactPage';
@@ -10,6 +10,9 @@ import BMIcalculator from './Pages/BMIcalculator';
 import RegisterPage from './Pages/RegisterPage';
 import LoginPage from './Pages/LoginPage';
 import Arms from './Pages/Exercises/Arms';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
 
 interface State {
 
@@ -20,6 +23,7 @@ class App extends Component<{}, State> {
 
   render() {
     return <div>
+      <Header/>
         <Routes>
           <Route path='/' element={<HomePage></HomePage>} />
           <Route path='/kapcsolat' element={<ContactPage></ContactPage>} />
@@ -30,6 +34,7 @@ class App extends Component<{}, State> {
           <Route path='/login' element={<LoginPage></LoginPage>} />
           <Route path='/arm' element={<Arms></Arms>} />
         </Routes>
+      <Footer />
     </div>
   }
 }

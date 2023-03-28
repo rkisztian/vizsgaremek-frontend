@@ -12,8 +12,7 @@ export default class AboutusPage extends Component<{}, State> {
 
     render(){
         return <div>
-            <Header/>
-            <Footer />
+
         </div>
     }
 }

@@ -53,7 +53,7 @@ export default class BMIcalculator extends Component<{}, State> {
 
     render(){
         return <div>
-            <Header/>
+
             <section className="BMIPage">
                 <form>
                     <h3>BMI kalkulátor</h3>
@@ -103,7 +103,6 @@ export default class BMIcalculator extends Component<{}, State> {
       </table>
             </section>
             
-            <Footer />
         </div>
     }
 }

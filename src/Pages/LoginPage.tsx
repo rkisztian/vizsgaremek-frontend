@@ -61,7 +61,6 @@ export default class LoginPage extends Component<{}, State> {
     render(){
         const {logEmail, logPassword} = this.state;
         return <div>
-            <Header/>
             <section className="LogForm">
                 <form>
                     <img src={Logo} alt="Sky Fitness Logo" style={{width: '250px'}}></img>
@@ -82,7 +81,6 @@ export default class LoginPage extends Component<{}, State> {
                 </form>
 
             </section>
-            <Footer />
         </div>
     }
 }

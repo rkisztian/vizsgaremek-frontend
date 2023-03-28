@@ -58,7 +58,6 @@ export default class RegisterPage extends Component<{}, State>{
   render(){
     const {newUsername, newEmail, newPassword, newPasswordAgain} = this.state;
     return <div>
-      <Header />
       <section className='RegForm'>
       <form>
         <img src={Logo} alt="Sky Fitness Logo" style={{width: '250px'}}></img>
@@ -88,7 +87,6 @@ export default class RegisterPage extends Component<{}, State>{
       </form>
        
       </section>
-      <Footer />
       </div>
       
   }

@@ -6,7 +6,7 @@
 }
 
 .RegForm input{
-  border-radius: 10px;
+  border-radius: 5px solid ;
   width: 300px;
   
 }
@@ -23,16 +23,12 @@
 }
 
 .LogForm input{
-  border-radius: 10px;
+  border-radius: 10px solid;
   width: 300px;
   margin: 10px;
   
 }
 
-.LogForm form{
-  border: 1px solid #8aecff;
-  border-radius: 5px;
-}
 
 .LogForm button{
   border-radius: 10px;
@@ -67,6 +63,15 @@ table.center {
 
 
 /*-----Home Page-----*/
-.izmok Card button{
-  
+
+
+
+.izmok{
+  align-items: center;
+  text-align: center;
+  margin: 5px;
+}
+
+.izmok img{
+  width: 30%;
 }

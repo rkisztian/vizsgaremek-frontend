@@ -1,4 +1,5 @@
 import { Component } from "react";
+import '../App.css'
 import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
@@ -19,96 +20,52 @@ export default class HomePage extends Component<{}, State> {
     
     render(){
 
-
-
-        return <div>
-            <Header/>
-            <Container className="izmok">
-                <br />
-                <h1 style={{textAlign: "center"}}>Izomcsoportok</h1>
-                <br />
-                <CardGroup className="text-center">
-
-
-
-                    <Card >
-                        <Card.Img  variant="top" src={Karizom} style={{width: "200px"}}/>
-                        <Card.Body>
-                            <Card.Title>Karizmok</Card.Title>
-                            <Card.Text>
-                                Itt a karizmokrol lesz szó, mint a bicepsz, tricepsz és váll.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                        <a href="/arm"><button>Feladatok</button></a>
-                        </Card.Footer>
-                    </Card>
-
-
-
-                    <Card>
-                        <Card.Img variant="top" src={Mellizom} style={{width: "200px"}}/>
-                        <Card.Body>
-                            <Card.Title>Karizmok</Card.Title>
-                            <Card.Text>
-                                Itt a karizmokrol lesz szó, mint a bicepsz, tricepsz és váll.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <a href="/"><button>Feladatok</button></a>
-                        </Card.Footer>
-                    </Card>
-
-
-
-                    <Card>
-                        <Card.Img variant="top" src={Hatizom} style={{width: "200px"}}/>
-                        <Card.Body>
-                            <Card.Title>Karizmok</Card.Title>
-                            <Card.Text>
-                                Itt a karizmokrol lesz szó, mint a bicepsz, tricepsz és váll.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <button>Feladatok</button>
-                        </Card.Footer>
-                    </Card>
-                </CardGroup>
-
-                <CardGroup className="text-center">
-                <Card>
-                        <Card.Img variant="top" src={Hasizom} style={{width: "200px"}}/>
-                        <Card.Body>
-                            <Card.Title>Karizmok</Card.Title>
-                            <Card.Text>
-                                Itt a karizmokrol lesz szó, mint a bicepsz, tricepsz és váll.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <button>Feladatok</button>
-                        </Card.Footer>
-                    </Card>
-
-                    <Card>
-                        <Card.Img variant="top" src={Labizom} style={{width: "200px"}}/>
-                        <Card.Body>
-                            <Card.Title>Karizmok</Card.Title>
-                            <Card.Text>
-                                Itt a karizmokrol lesz szó, mint a bicepsz, tricepsz és váll.
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <button>Feladatok</button>
-                        </Card.Footer>
-                    </Card>
-
-                </CardGroup>
-
-                
-
-            </Container>
+        return <div className="izmok">
             <br />
-            <Footer />
+            <h1>Izomcsoportok</h1>
+            <br />
+            <div className="conatiner-fluid">
+                <div className="row">
+                    <div className="col-4">
+                        <img src={Karizom} alt="karizom"/>
+                        <h3>Karizom</h3>
+                        <p></p>
+                        <button>Feladatok</button>
+                    </div>
+
+                    <div className="col-4">
+                        <img src={Mellizom} alt="karizom"/>
+                        <h3>Mellizom</h3>
+                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
+                        <button>Feladatok</button>
+                    </div>
+
+                    <div className="col-4">
+                        <img src={Hatizom} alt="karizom"/>
+                        <h3>Hátizom</h3>
+                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
+                        <button>Feladatok</button>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-6">
+                        <img src={Hasizom} alt="karizom"/>
+                        <h3>Hasizom</h3>
+                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
+                        <button>Feladatok</button>
+                    </div>
+
+                    <div className="col-6">
+                        <img src={Labizom} alt="karizom"/>
+                        <h3>Lábizom</h3>
+                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
+                        <button>Feladatok</button>
+
+                    </div>
+                </div>
+
+            </div>
+            
         </div>
     }
 }

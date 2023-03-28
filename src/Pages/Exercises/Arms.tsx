@@ -4,17 +4,17 @@ import Header from "../../Components/Header";
 
 
 
-interface State{
 
-}
-
-export default class Arms extends Component<{}, State> {
-
-
+export default class Arms extends Component {
+    
     render(){
+
+        const data = [
+            img:'',
+            name: ''
+        ]
+
         return <div>
-            <Header/>
-            <Footer />
         </div>
     }
 }
