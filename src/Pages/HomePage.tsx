@@ -1,13 +1,11 @@
 import { Component } from "react";
 import '../App.css'
-import { Card, CardGroup, Col, Container, Row } from "react-bootstrap";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
 import Karizom from "../Images/karizmok.png"
 import Mellizom from "../Images/mellizmok.png"
 import Hatizom from "../Images/hatizom.png"
 import Hasizom from "../Images/hasizmok.png"
 import Labizom from "../Images/labizmok.png"
+import { Link } from "react-router-dom";
 
 interface State{
 
@@ -30,7 +28,7 @@ export default class HomePage extends Component<{}, State> {
                         <img src={Karizom} alt="karizom"/>
                         <h3>Karizom</h3>
                         <p></p>
-                        <button>Feladatok</button>
+                        <button><Link to="/arm">Feladatok</Link></button>
                     </div>
 
                     <div className="col-4">
