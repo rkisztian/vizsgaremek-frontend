@@ -1,10 +1,21 @@
+
+
 @font-face {
   font-family: Bukhari;
   src: url(/public/Bukhari.ttf);
 }
 
+@font-face{
+  font-family: Alkatra;
+  src: url(/public/Alkatra.ttf);
+}
+
 h1,h2,h3,h4{
-  font-family: Bukhari;
+  font-family: Alkatra;
+}
+
+p{
+  font-family: Alkatra;
 }
 
 /*------Register Form-----*/
@@ -72,11 +83,18 @@ table.center {
 
 /*-----Home Page-----*/
 
-
-
 .izmok{
   align-items: center;
   text-align: center;
+  margin: 50px;
+}
+
+.izmok .col-8{
+  border: 5px solid black;
+}
+
+.izmok .col-8 p{
+  text-align: left;
   margin: 5px;
 }
 
@@ -84,26 +102,42 @@ table.center {
   width: 30%;
 }
 
+.izmok button{
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.izmok .Link{
+  text-decoration: none;
+}
+
 
 /*-----Arm Page-----*/
 
+.parallax{
+  background-image: url(/src/Images/hatter.png);
+  min-height: 350px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  color: #8aecff;
+}
+
 .armPage{
   text-align: center;
-  font-family: Bukhari;
-  
 }
 
 .gyakorlatok{
   border: 3px solid black;
   border-radius: 10px;
   margin: 100px;
-  font-size: 15px;
+  font-size: 18px;
   text-align:left;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .gyakorlatok .col-4{
-  border: 3px solid black;
-  border-radius: 10px;
+
   
 }

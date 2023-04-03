@@ -16,23 +16,47 @@ export default class Arms extends Component {
             {
                 image: '../../Images/scotpad.gif',
                 video: null,
-                name: 'Bicepsz Scott Padon',
-                discription: 'A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.',
+                name: 'Bicepsz karhajlítás állva kézi súlyzóval',
+                discription: 'Ragadj meg egy pár kézi súlyzót és engedd le magad mellé! Fordítsd úgy a karjaid, hogy a tenyereid egymás felé nézzenek! Anélkül, hogy a felkarod elmozdítanád, hajlítsd be a könyököd, és ahogy emeled a súlyzót, közelítsd a vállaid felé! Ekkor tarts szünetet, feszítsd meg a bicepszed és lassan engedd vissza a súlyt a kiinduló helyzetbe! Minden ismétlésnél teljesen nyújtsd ki a karjaid a kezdő pozícióban!',
             },
 
             {
                 image: '../../Images/concBiceps.gif"',
                 video: null,
-                name: 'Koncentrált Bicepsz',
-                discription: 'A Lorem Ipsum egy egyszerû szövegrészlete, szövegutánzata a betûszedõ és nyomdaiparnak. A Lorem Ipsum az 1500-as évek óta standard szövegrészletként szolgált az iparban; mikor egy ismeretlen nyomdász összeállította a betûkészletét és egy példa-könyvet vagy szöveget nyomott papírra, ezt használta. Nem csak 5 évszázadot élt túl, de az elektronikus betûkészleteknél is változatlanul megmaradt. Az 1960-as években népszerûsítették a Lorem Ipsum részleteket magukbafoglaló Letraset lapokkal, és legutóbb softwarekkel mint például az Aldus Pagemaker.',
-            }
+                name: 'Kalapács bicepsz karhajlítás',
+                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+            },
+
+            {
+                image: '../../Images/concBiceps.gif"',
+                video: null,
+                name: 'Kalapács bicepsz karhajlítás',
+                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+            },
+
+            {
+                image: '../../Images/concBiceps.gif"',
+                video: null,
+                name: 'Kalapács bicepsz karhajlítás',
+                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+            },
+
+            {
+                image: '../../Images/concBiceps.gif"',
+                video: null,
+                name: 'Kalapács bicepsz karhajlítás',
+                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+            },
 
         ]
 
         return <Container>
+            
             <section className="armPage">
                     <br />
-                    <h1>Gyakorlatok</h1>
+                    <div className='parallax'>
+                        <h2>Kar edzés a nagyobb Karokért | A legjobb karizom gyakorlatok</h2>
+                    </div>
                      
 
                     <div className="gyakorlat">

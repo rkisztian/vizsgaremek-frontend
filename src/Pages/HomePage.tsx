@@ -18,52 +18,32 @@ export default class HomePage extends Component<{}, State> {
     
     render(){
 
-        return <div className="izmok">
-            <br />
+        return <section>
             <h1>Izomcsoportok</h1>
+            <div className="izmok">
             <br />
-            <div className="conatiner-fluid">
+            <div className="conatiner">
                 <div className="row">
+                    <div className="col-8">
+                        <h2>Karizom</h2>
+                        <p>Ha a legjobb gyakorlatokat keresed, amelyek abban segítenek, hogy izmosabb, 
+                            definiáltabb karjaid legyenek, akkor jó helyen jársz!
+                            Hiszen sokak leghőbb vágyai között szerepel a nagyobb bicepsz, igaz? Akár egy teljes edzést a karizmaid építésének szentelnél, 
+                            vagy éppen csak néhány kiegészítő gyakorlatot keresel, mi összegyűjtöttük, amire csak szükséged lehet a kiemelkedő eredményekhez! 
+                            Bemutatjuk kar edzés gyakorlatainkból a legjobbakat</p>
+                    </div>
                     <div className="col-4">
-                        <img src={Karizom} alt="karizom"/>
-                        <h3>Karizom</h3>
-                        <p></p>
-                        <button><Link to="/arm">Feladatok</Link></button>
+                        <Link to="/arm">
+                            <img src={Karizom} alt="karizom" />
+                        </Link>
                     </div>
 
-                    <div className="col-4">
-                        <img src={Mellizom} alt="karizom"/>
-                        <h3>Mellizom</h3>
-                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
-                        <button>Feladatok</button>
-                    </div>
-
-                    <div className="col-4">
-                        <img src={Hatizom} alt="karizom"/>
-                        <h3>Hátizom</h3>
-                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
-                        <button>Feladatok</button>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-6">
-                        <img src={Hasizom} alt="karizom"/>
-                        <h3>Hasizom</h3>
-                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
-                        <button>Feladatok</button>
-                    </div>
-
-                    <div className="col-6">
-                        <img src={Labizom} alt="karizom"/>
-                        <h3>Lábizom</h3>
-                        <p>aksbdkjasbdlhasldhnlasdnlkhla</p>
-                        <button>Feladatok</button>
-
-                    </div>
                 </div>
 
             </div>
             
         </div>
+        </section>
+        
     }
 }
