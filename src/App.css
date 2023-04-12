@@ -83,6 +83,11 @@ table.center {
 
 /*-----Home Page-----*/
 
+.fooldal{
+  text-align: center;
+}
+
+
 .izmok{
   align-items: center;
   text-align: center;
@@ -96,6 +101,7 @@ table.center {
 .izmok .col-8 p{
   text-align: left;
   margin: 5px;
+  font-size: 18px;
 }
 
 .izmok img{
@@ -111,8 +117,28 @@ table.center {
   text-decoration: none;
 }
 
-
 /*-----Arm Page-----*/
+
+.arms{
+  text-align: center;
+}
+
+.arms p{
+  font-size: 18px;
+}
+
+.arms img{
+  width: 30%;
+  
+}
+
+.arms h2{
+  text-align: center;
+}
+
+
+
+/*-----Biceps Page-----*/
 
 .parallax{
   background-image: url(/src/Images/hatter.png);
@@ -122,11 +148,17 @@ table.center {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 150px;
-  color: #8aecff;
+  color: white;
 }
 
 .armPage{
   text-align: center;
+}
+
+.armPage p{
+  font-size: 18px;
+  text-align: left;
+  margin: 5px;
 }
 
 .gyakorlatok{
@@ -141,3 +173,4 @@ table.center {
 
   
 }
+

@@ -1,4 +1,6 @@
 import '../../App.css';
+import "bootstrap/dist/css/bootstrap.css"
+
 import { Component } from "react";
 import ScotPad from "../../Images/scotpad.gif"
 import ConcBiceps from "../../Images/concBiceps.gif"
@@ -8,7 +10,7 @@ import Gyakorlat from "../../Images/gyakorlat_sky.png"
 
 
 
-export default class Arms extends Component {
+export default class Biceps extends Component {
     
     render(){
 
@@ -57,12 +59,24 @@ export default class Arms extends Component {
                     <div className='parallax'>
                         <h2>Kar edzés a nagyobb Karokért | A legjobb karizom gyakorlatok</h2>
                     </div>
+                    <br />
+
+                    <p>
+                        A nyár még nagyban tart, 
+                        így a jó öreg <b>’sun’s out, guns out’</b> mondás is érvényes még. 
+                        Viszont akár ujjatlanban vagyunk, akár nem, 
+                        nincs okunk könnyelműen kezelni a bicepsz edzését, 
+                        ugyanis a ’kar-szezon’ egész éves. 
+                        De mi a legjobb gyakorlatok a nagyobb bicepszekért? 
+                        Ezen az oldalon a legjobb gyakorlatokat mutatjuk be, melyek segítségével <b>kitöltheted az ingujjaid</b> . 
+                    </p>
                      
 
                     <div className="gyakorlat">
                         {data.map((gyakorlat) => {
                             return(
                                 <div className="gyakorlatok">
+                                    
                                     <div className="container">
                                         <h2>{gyakorlat.name}</h2>
                                         <div className="row">

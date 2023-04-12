@@ -9,9 +9,10 @@ import Caloriecalculator from './Pages/CalorieCalculator';
 import BMIcalculator from './Pages/BMIcalculator';
 import RegisterPage from './Pages/RegisterPage';
 import LoginPage from './Pages/LoginPage';
-import Arms from './Pages/Exercises/Arms';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
+import Biceps from './Pages/Exercises/Biceps';
+import ArmPage from './Pages/Exercises/Arm';
 
 
 interface State {
@@ -28,11 +29,15 @@ class App extends Component<{}, State> {
           <Route path='/' element={<HomePage></HomePage>} />
           <Route path='/kapcsolat' element={<ContactPage></ContactPage>} />
           <Route path='/rolunk' element={<AboutusPage></AboutusPage>} />
+          
           <Route path='/kaloria' element={<Caloriecalculator></Caloriecalculator>} />
           <Route path='/bmi' element={<BMIcalculator></BMIcalculator>} />
+
           <Route path='/register' element={<RegisterPage></RegisterPage>} />
           <Route path='/login' element={<LoginPage></LoginPage>} />
-          <Route path='/arm' element={<Arms></Arms>} />
+
+          <Route path='/arm' element={<ArmPage></ArmPage>} />
+          <Route path='/biceps' element={<Biceps></Biceps>} />
         </Routes>
       <Footer />
     </div>

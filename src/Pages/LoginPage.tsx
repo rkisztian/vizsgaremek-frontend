@@ -4,6 +4,7 @@ import { TokenObj } from "../token";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Logo from '../Images/sky_fitness_logo.png';
+import "bootstrap/dist/css/bootstrap.css"
 
 
 interface State{
