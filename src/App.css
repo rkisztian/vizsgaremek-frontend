@@ -94,8 +94,13 @@ table.center {
   margin: 50px;
 }
 
+.izmok .conatiner{
+  padding: 10px;
+}
+
 .izmok .col-8{
-  border: 5px solid black;
+  border: 5px solid #8aecff;
+  border-radius: 5px;
 }
 
 .izmok .col-8 p{
