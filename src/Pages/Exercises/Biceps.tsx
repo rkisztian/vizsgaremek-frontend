@@ -2,10 +2,10 @@ import '../../App.css';
 import "bootstrap/dist/css/bootstrap.css"
 
 import { Component } from "react";
-import ScotPad from "../../Images/scotpad.gif"
-import ConcBiceps from "../../Images/concBiceps.gif"
+
 import { Container } from "react-bootstrap";
-import Gyakorlat from "../../Images/gyakorlat_sky.png"
+import ReactPlayer from 'react-player';
+
 
 
 
@@ -16,8 +16,8 @@ export default class Biceps extends Component {
 
         const data = [
             {
-                image: '../../Images/scotpad.gif',
-                video: null,
+                media: 'https://www.youtube.com/watch?v=WpYcBunLieo',
+
                 name: 'Bicepsz karhajlítás állva kézi súlyzóval',
                 discription: 'Ragadj meg egy pár kézi súlyzót és engedd le magad mellé! Fordítsd úgy a karjaid, hogy a tenyereid egymás felé nézzenek! Anélkül, hogy a felkarod elmozdítanád, hajlítsd be a könyököd, és ahogy emeled a súlyzót, közelítsd a vállaid felé! Ekkor tarts szünetet, feszítsd meg a bicepszed és lassan engedd vissza a súlyt a kiinduló helyzetbe! Minden ismétlésnél teljesen nyújtsd ki a karjaid a kezdő pozícióban!',
             },
@@ -80,11 +80,11 @@ export default class Biceps extends Component {
                                     <div className="container">
                                         <h2>{gyakorlat.name}</h2>
                                         <div className="row">
-                                            <div className="col-8">
+                                            <div className="col-5">
                                                 <p>{gyakorlat.discription}</p>
                                             </div>
-                                            <div className="col-4">
-                                                <img src={gyakorlat.image} alt={gyakorlat.name} />
+                                            <div className="col-7">
+                                                <ReactPlayer height='350px' controls url={gyakorlat.media} />
                                             </div>
                                         </div>
                                     </div>
