@@ -5,13 +5,19 @@ import "bootstrap/dist/css/bootstrap.css"
 import Bicepsz from "../../Images/bicpesz.png"
 import Tricepsz from "../../Images/tricpesz.png"
 import { Link } from "react-router-dom";
+import { Container } from 'react-bootstrap';
 
 
 export default class ArmPage extends Component{
 
 
     render(): ReactNode {
-        return<section className="arms">
+        return<Container>
+            <section className="arms">
+            <br />
+            <div className='parallax1'>
+                <h2>Kar edzések a nagyobb Karokért | A legjobb karizom gyakorlatok</h2>
+            </div>
             <br />
             <h2>Kar gyakorlatok</h2>
             <div className="karizmok">
@@ -21,7 +27,7 @@ export default class ArmPage extends Component{
                         <b>rövid (Belső) fej</b> és <b>hosszu (Külső) fej</b>  a bicepsznél. 
                         Itt a lehető leghatásosabb gyakorlatokat gyűjtöttük össze nektek amik hozzájárulnak ahoz, hogy minél <b>nagyobb</b> karotok legyen.</p>
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-12">
                             <h2>Bicepsz</h2>
                             <Link to="/biceps">
                                 <img src={Bicepsz} alt="bicepsz" />
@@ -30,7 +36,7 @@ export default class ArmPage extends Component{
                         </div>
 
                             
-                        <div className="col-6">
+                        <div className="col-12">
                             <h2>Tricepsz</h2>
                             <Link to="/triceps">
                                 <img src={Tricepsz} alt="bicepsz" />
@@ -44,5 +50,7 @@ export default class ArmPage extends Component{
 
             </div>
         </section>
+        </Container>
+        
     }
 }

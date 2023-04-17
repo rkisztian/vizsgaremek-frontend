@@ -25,7 +25,6 @@ p{
 }
 
 .RegForm input{
-  border-radius: 5px solid ;
   width: 300px;
   
 }
@@ -41,11 +40,14 @@ p{
   margin: 200px;
 }
 
+.LogForm form{
+  box-shadow: 1px 2px 9px black;
+  padding: 10px;
+}
+
 .LogForm input{
-  border-radius: 10px solid;
   width: 300px;
   margin: 10px;
-  
 }
 
 
@@ -99,8 +101,8 @@ table.center {
 }
 
 .izmok .col-8{
-  border: 5px solid #8aecff;
   border-radius: 5px;
+  box-shadow: 1px 2px 9px black;
 }
 
 .izmok .col-8 p{
@@ -110,7 +112,9 @@ table.center {
 }
 
 .izmok img{
-  width: 30%;
+  width: 50%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 9px black;
 }
 
 .izmok button{
@@ -141,6 +145,27 @@ table.center {
   text-align: center;
 }
 
+.parallax1 {
+  background-image: url(/src/Images/pralarax.png);
+  min-height: 350px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 150px;
+  color: white;
+}
+
+.arms .col-6{
+  box-shadow: 1px 2px 9px black;
+}
+
+.arms img{
+  width: 20%;
+  border-radius: 5px;
+  box-shadow: 1px 2px 9px black;
+}
+
 
 
 /*-----Biceps Page-----*/
@@ -167,9 +192,10 @@ table.center {
 }
 
 .gyakorlatok{
-  border: 3px solid black;
+  box-shadow: 1px 2px 9px black;
   border-radius: 10px;
   margin: 100px;
+  padding: 10px;
   font-size: 18px;
   text-align:left;
 }

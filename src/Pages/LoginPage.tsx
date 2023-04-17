@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import Logo from '../Images/sky_fitness_logo.png';
 import "bootstrap/dist/css/bootstrap.css"
+import { Container } from "react-bootstrap";
 
 
 interface State{
@@ -61,7 +62,8 @@ export default class LoginPage extends Component<{}, State> {
 
     render(){
         const {logEmail, logPassword} = this.state;
-        return <div>
+        return <Container>
+            <div>
             <section className="LogForm">
                 <form>
                     <img src={Logo} alt="Sky Fitness Logo" style={{width: '250px'}}></img>
@@ -83,5 +85,8 @@ export default class LoginPage extends Component<{}, State> {
 
             </section>
         </div>
+        </Container>
+        
+        
     }
 }
