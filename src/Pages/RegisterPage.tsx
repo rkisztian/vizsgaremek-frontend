@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import Header from '../Components/Header';
 import Logo from '../Images/sky_fitness_logo.png';
 import "bootstrap/dist/css/bootstrap.css"
+import { ResponseMess } from '../response';
+
+
+/**
+ * newUsername, newEmail, newPassword, newPasswordAgain a regisztrációs adatok eltárolásáéert felel
+ * message-be tárólodik el a backendtől vissza kapott üzenet
+ */
 
 interface State{
   message: string[];
@@ -11,6 +18,8 @@ interface State{
   newEmail: string;
   newPassword: string;
   newPasswordAgain: string;
+  regError: boolean;
+  reg: boolean
 }
 
 export default class RegisterPage extends Component<{}, State>{
@@ -24,35 +33,74 @@ export default class RegisterPage extends Component<{}, State>{
     newEmail: "",
     newPassword: "",
     newPasswordAgain: "",
+    regError: false,
+    reg: false
     }
   }
 
-  newUser =async () => {
-  const {newUsername, newEmail, newPassword, newPasswordAgain} = this.state;
+  newUser = async (e: FormEvent) => {
+    e.preventDefault()
     
-  const adat = {
-    username: newUsername,
-    email: newEmail,
-    password: newPassword,
-    passwordAgain: newPasswordAgain,
-  }
+    
+    if(this.state.newUsername.trim() === ''){
+      this.setState({
+        message: ['Felhasználó név megadása kötelező!'],
+        regError: true
+      })
+      return;
+    }
+    else if (this.state.newPassword === '') {
+      this.setState({
+        message: ['Jelszó megadása kötelező'],
+        regError: true
+      })
+      return;
+    }
+    else if (this.state.newPassword !== this.state.newPasswordAgain) {
+      this.setState({
+        message: ['A két jelszó nem egyezik meg'],
+        regError: true
+      })
+      return;
+    }
+    else {
+      const data = {
+        username : this.state.newUsername,
+        email: this.state.newEmail,
+        password: this.state.newPassword,
+        newPasswordAgain: this.state.newPasswordAgain
+      };
 
-  let response = await fetch ('http://localhost:3000/auth/register',{
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'},
-    body: JSON.stringify(adat)
-  });
-  
-  if(response.ok){
-    this.setState({
-      newUsername: "",
-    newEmail: "",
-    newPassword: "",
-    newPasswordAgain: "",
-    })
-    this.setState({message: ['Sikeres Regisztráció']})
-  }
+      let response = await fetch('http://localhost:3000/auth/register',{
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data),
+      });
+
+      if(response.ok){
+        this.setState({
+          newUsername: '',
+          newEmail: '',
+          newPassword: '',
+          newPasswordAgain: ''
+        })
+        this.setState({
+          regError: false,
+          reg: true
+        })
+        window.location.replace('/login')
+      }
+      else{
+        const res = await response.json() as ResponseMess
+        this.setState({
+          message: res.message,
+          regError: true
+        })
+      }
+    }
+      
   }
     
 
@@ -82,7 +130,8 @@ export default class RegisterPage extends Component<{}, State>{
         </div>
 
         <button onClick={this.newUser} className="button" >Regisztáció</button>
-
+        {this.state.regError===true ? <div className="alert">{this.state.message}</div> : null}
+        {this.state.reg=== true ? <div className="alert-success">Sikeres Regisztráció</div>: null}
 
 
       </form>
