@@ -1,4 +1,4 @@
-import { ChangeEvent, Component } from "react";
+import { ChangeEvent, Component, FormEvent } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import "bootstrap/dist/css/bootstrap.css"
@@ -40,7 +40,8 @@ export default class BMIcalculator extends Component<{}, State> {
         })
     }
 
-    BMISzamitas = () => {
+    BMISzamitas = (e: FormEvent) => {
+        e.preventDefault()
         this.setState({
           BMIertek:  this.state.suly / Math.pow((this.state.magassag/100), 2)
         })
