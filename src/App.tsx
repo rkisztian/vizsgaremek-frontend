@@ -13,6 +13,7 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Biceps from './Pages/Exercises/Biceps';
 import ArmPage from './Pages/Exercises/Arm';
+import ProfilePage from './Pages/Profile';
 
 
 interface State {
@@ -35,6 +36,7 @@ class App extends Component<{}, State> {
 
           <Route path='/register' element={<RegisterPage></RegisterPage>} />
           <Route path='/login' element={<LoginPage></LoginPage>} />
+          <Route path='/profile' element={<ProfilePage></ProfilePage>} />
 
           <Route path='/arm' element={<ArmPage></ArmPage>} />
           <Route path='/biceps' element={<Biceps></Biceps>} />

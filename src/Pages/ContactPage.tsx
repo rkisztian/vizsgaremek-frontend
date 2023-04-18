@@ -5,11 +5,9 @@ import "bootstrap/dist/css/bootstrap.css"
 
 
 
-interface State{
 
-}
 
-export default class ContactPage extends Component<{}, State> {
+export default class ContactPage extends Component {
     
 
     render(){
