@@ -12,6 +12,23 @@ import { NavLink } from "react-router-dom";
 
 
 export default class Header extends Component<{}>{
+
+
+    logout = async ()=>{
+
+        let response= await fetch('http://localhost:3000/auth/logout',{
+            method: 'DELETE',
+            headers:{
+                'Authorization':'Bearer '+ localStorage.getItem('token')
+            }
+        });
+            if(response.ok){
+                localStorage.setItem('user.id', '')
+                localStorage.setItem('token','')
+                localStorage.setItem('user.name', '')
+                window.location.replace('/login')
+            }
+    }
     
     render(): ReactNode {
 
@@ -35,6 +52,7 @@ export default class Header extends Component<{}>{
             {localStorage.getItem('token') !== '' || localStorage.getItem('token') === null? <Nav>
                 <NavbarCollapse>
                     <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
+                    <button onClick={this.logout}>Kijelentkezés</button>
                     
                 </NavbarCollapse>
             </Nav>  :
