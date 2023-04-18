@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import Logo from '../Images/sky_fitness_logo.png';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
+import { NavLink } from "react-router-dom";
 
 
 
@@ -29,14 +30,24 @@ export default class Header extends Component<{}>{
                         <NavDropdown.Item href="/bmi">BMI Kalkulátor</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
-
             </Navbar.Collapse>
+
+            {localStorage.getItem('token') !== '' || localStorage.getItem('token') === null? <Nav>
+                <NavbarCollapse>
+                    <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
+                    
+                </NavbarCollapse>
+            </Nav>  :
             <Nav className="me-auto">
             <Navbar.Collapse className="justify-content-end">
                 <Nav.Link href="/register">Regisztráció</Nav.Link>
                 <Nav.Link href="/login">Bejelentkezés</Nav.Link>
             </Navbar.Collapse>
             </Nav>
+            }
+
+
+            
         </Navbar>
         </section>
     }

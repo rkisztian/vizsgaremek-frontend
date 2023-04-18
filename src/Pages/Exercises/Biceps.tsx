@@ -23,32 +23,35 @@ export default class Biceps extends Component {
             },
 
             {
-                image: '../../Images/concBiceps.gif"',
-                video: null,
+                media: 'https://www.youtube.com/watch?v=r07ANQZpdu8',
                 name: 'Kalapács bicepsz karhajlítás',
                 discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
             },
 
             {
-                image: '../../Images/concBiceps.gif"',
-                video: null,
-                name: 'Kalapács bicepsz karhajlítás',
-                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+                media: 'https://www.youtube.com/watch?v=Wss2VXkaa5w',
+                name: 'Bicepszhajlítás rúddal',
+                discription: 'A bicepszhajlítás rúddal az egyik legjobb tömegnövelő gyakorlat, egyszerűen azért, mert nagyon sok izmot igénybe vesznek csak a test stabilizálása miatt is. Ezt jól tudja illusztrálni az, ha elképzelsz valakit, aki nagyobb súllyal próbálja végezni a gyakorlatot, mint, amit elbír, és ahelyett, hogy a rudat a bicepsze segítségével hajlítaná, a rúd hajlítja őt!',
             },
 
             {
-                image: '../../Images/concBiceps.gif"',
-                video: null,
-                name: 'Kalapács bicepsz karhajlítás',
-                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+                media: 'https://www.youtube.com/watch?v=8khW8pUvb3o',
+                name: 'Kalapács ülve egykezes súlyzókkal, döntött padon',
+                discription: 'A könyék pozíciója miatt (hátra húzva, eltartva a testtől) a külső, hosszú feje a bicepsznek (ami a vállízület felett ered) végzi a munka jelentős részét.Ajánlott a bicepsz hosszú fejére nagyobb figyelmet szentelni, mivel az a leglátványosabb! Kivéve, ha szokásod egy dupla bicepsz pózt mutatni minden alkalommal, mikor belépsz egy ajtón.'
             },
 
             {
-                image: '../../Images/concBiceps.gif"',
-                video: null,
-                name: 'Kalapács bicepsz karhajlítás',
-                discription: 'Fogj egy pár kézi súlyzót és engedd le őket a tested mellé, úgy, hogy a tenyereid a combjaid felé nézzenek! A felkar elmozdulása nélkül hajlítsd be a könyököd és közelítsd a súlyzókat a vállaidhoz, amennyire csak tudod! Rövid szünet után lassan engedd vissza a súlyt a kiindulóhelyzetbe! Minden alkalommal, amikor leengeded a súlyt, teljesen nyújtsd ki a karod!',
+                media: 'https://www.youtube.com/watch?v=vwXkZqlgCFo',
+                name: 'Bicepsz Scott-padon egykezes súlyzókkal',
+                discription: 'Scott preacher hajlítás gyakorlata kiváló bicepsz izolációt tett lehetővé és nagyszerűen erősítette a brachialis izmot. A brachialis a bicepsz alatt van, ami a szabályosan végrehajtott preacher hajlításnál a felkarba nyomja az izmot, ezáltal még nagyobb karja lesz. A köztudattal ellentétben, ennél a gyakorlatnál teljesen elfogadható, ha a testeddel kicsit belemozdulsz. Ezzel a technikával a bicepsz jobban nyúlik, illetve húzódik össze, ami által a gyakorlat sokkal nehezebb lesz, de hatásosabb is.'
             },
+
+            {
+                media: 'https://www.youtube.com/watch?v=q_Qqt05NviM',
+                name: 'Koncentrált bicepszgyakorlat ülve',
+                discription: 'A koncentrált bicepszhajlítás egy gyakran félreértett feladat, mivel sokan azt hiszik, hogy izomtömeg növelés helyett inkább a bicepszet csúcsosítja. Sajnos a bicepsz alakját a genetika határozza meg – mindenkinek lehet nagyobb karja, de az már a természeten múlik, hogy lapos lesz, mint egy lepényhal vagy csúcsos, mint egy hegy.'
+            },
+
 
         ]
 

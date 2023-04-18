@@ -13,7 +13,13 @@ interface State{
     logEmail: string;
     logPassword: string;
     token: string;
+}
 
+export default interface userData{
+    id: number;
+    username: string;
+    email: string;
+    password: string;
 }
 
 export default class LoginPage extends Component<{}, State> {
@@ -58,6 +64,17 @@ export default class LoginPage extends Component<{}, State> {
                 localStorage.setItem('token', this.state.token)
             }
         }
+    }
+
+    dataStorage = async ()=> {
+        let response= await fetch('http://localhost:3000/user/profile',{
+            headers: {'Authorization':'Bearer' + localStorage.getItem('token'),
+            'content-type':'application/json'}
+        })
+        
+        const data = await response.json() as userData
+        localStorage.setItem('user.id', data.id.toString())
+        localStorage.setItem('user.name', data.username)
     }
 
     render(){
