@@ -96,6 +96,11 @@ p{
   margin: 60px;
 }
 
+.BMIPage form{
+  box-shadow: 1px 1px 9px black;
+  padding: 50px;
+}
+
 .BMIPage input {
   padding-right: 10px;
 }
@@ -107,6 +112,12 @@ p{
 table.center {
   margin-left: auto; 
   margin-right: auto;
+  
+}
+
+.BMIinput{
+  text-align: center;
+  margin: 100px;
 }
 
 
@@ -231,8 +242,5 @@ table.center {
   text-align:left;
 }
 
-.gyakorlatok .col-4{
 
-  
-}
 

@@ -13,6 +13,9 @@ interface State{
     idealisMaxTomeg: number;
 }
 
+/**
+ * Egy teljesen egyszerű BMI kalkulátor
+ */
 export default class BMIcalculator extends Component<{}, State> {
 
     constructor(props: {}) {
@@ -40,6 +43,10 @@ export default class BMIcalculator extends Component<{}, State> {
         })
     }
 
+    /**
+     * 
+     * Ez számítja ki a BMI-t a megadott suly és magasság alapján
+     */
     BMISzamitas = (e: FormEvent) => {
         e.preventDefault()
         this.setState({
@@ -68,7 +75,8 @@ export default class BMIcalculator extends Component<{}, State> {
                 <button onClick={this.BMISzamitas}>Számítás</button>
                 </form>
             </section>
-            <section className="BMIPage">
+            
+            <section className="BMIinput">
             <h2 id="eredmeny">Az ön BMI értéke: {this.state.BMIertek}</h2>
       <table className="center">
           <tr className={this.state.BMIertek < 18.5 ? 'kiemelt' : ''}>
