@@ -244,3 +244,26 @@ table.center {
 
 
 
+/*-----About us Page-----*/
+
+.Aboutus h1{
+  text-align: center;
+}
+
+.Aboutus .conatiner{
+  padding: 20px;
+  margin: 50px;
+}
+
+.Aboutus p{
+  font-size: 19px;
+}
+
+.Aboutus img{
+  width: 70%;
+  text-align: center;
+}
+
+.Aboutus .col-5{
+  box-shadow: 1px 1px 9px black;
+}
