@@ -10,7 +10,10 @@ import { NavLink } from "react-router-dom";
 
 
 
-
+/**
+ * Egy átlagos fejléc amit a react Nav-váal csináltam meg.
+ * Bejelentkezéskor a fejléc megváltozik
+ */
 export default class Header extends Component<{}>{
 
 
@@ -55,7 +58,8 @@ export default class Header extends Component<{}>{
                     <button onClick={this.logout}>Kijelentkezés</button>
                     
                 </NavbarCollapse>
-            </Nav>  :
+            </Nav>  
+            :
             <Nav className="me-auto">
             <Navbar.Collapse className="justify-content-end">
                 <Nav.Link href="/register">Regisztráció</Nav.Link>

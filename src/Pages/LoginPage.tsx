@@ -8,12 +8,21 @@ import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
 
 
+
+/**
+ *  logEmail és LogPassword a bejelntekzéshez eltárolódnak
+ *  Bejelentkezés során létrehoz egy Token a felhasználónak
+ */
 interface State{
     message: string[];
     logEmail: string;
     logPassword: string;
     token: string;
 }
+
+/**
+ *  Responsebol kapott json objektumoit hoz létre
+ */
 
 export default interface userData{
     id: number;
@@ -35,6 +44,11 @@ export default class LoginPage extends Component<{}, State> {
     }
 
 
+
+    /**
+     * Az adatok validálását hajtja végre backend és frontenden egyaránt
+     * Sikeres bejelntkezéskor meghívja a dataStorage functiont és át dob egy másik oldalra, de ez nem akar működni
+     */
     handleLogin = async ()=> {
         if (this.state.logEmail.trim() && this.state.logPassword === '') {
             this.setState({message: ['A bejelentekezési mezők kitöltése kötelező!']})
@@ -58,14 +72,21 @@ export default class LoginPage extends Component<{}, State> {
                 const res= await response.json() as TokenObj
 
                 this.setState({
+                    logEmail: '',
+                    logPassword: '',
                     token: res.token,
                     message: ['Sikeres bejelentkezés']
                 })
                 localStorage.setItem('token', this.state.token)
+                this.dataStorage()
             }
         }
     }
 
+    /**
+     * Localsoragben eltárolja a felhasználó adatait mint a nevét és az id-ját
+     * Kér egy tokent a backendtől és azt eltárolja
+     */
     dataStorage = async ()=> {
         let response= await fetch('http://localhost:3000/user/profile',{
             headers: {'Authorization':'Bearer' + localStorage.getItem('token'),

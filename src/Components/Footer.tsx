@@ -3,6 +3,10 @@ import { MDBCol, MDBContainer, MDBFooter, MDBIcon, MDBRow } from "mdb-react-ui-k
 import { Component, ReactNode } from "react";
 import {Box,} from "./FooterStyles";
 
+
+/**
+ * Egy teljesen alap lábléc lett elkészítve az oldalnak
+ */
 export default class Footer extends Component{
  render(): ReactNode {
     

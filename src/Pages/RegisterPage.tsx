@@ -1,7 +1,5 @@
-import React, { Component, FormEvent } from 'react';
+import { Component, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
-import Footer from '../Components/Footer';
-import Header from '../Components/Header';
 import Logo from '../Images/sky_fitness_logo.png';
 import "bootstrap/dist/css/bootstrap.css"
 import { ResponseMess } from '../response';
@@ -10,6 +8,8 @@ import { ResponseMess } from '../response';
 /**
  * newUsername, newEmail, newPassword, newPasswordAgain a regisztrációs adatok eltárolásáéert felel
  * message-be tárólodik el a backendtől vissza kapott üzenet
+ * regError a hibás regisztrációért felelős
+ * reg a sikeres regisztrációtért felelős
  */
 
 interface State{
@@ -38,6 +38,10 @@ export default class RegisterPage extends Component<{}, State>{
     }
   }
 
+  /**
+   * Validációt végez a frontend és a backend egyaránt
+   * Ha minden adat helyesen van kitltve akkor létre hoz egy usert
+   */
   newUser = async (e: FormEvent) => {
     e.preventDefault()
     
