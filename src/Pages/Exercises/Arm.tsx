@@ -10,6 +10,13 @@ import { Container } from 'react-bootstrap';
 
 export default class ArmPage extends Component{
 
+    /**
+     *  Mikor át dob az uj oldalra, feldob az oldal tetejére
+     */
+    scroolTop = () => { 
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
 
     render(): ReactNode {
         return<Container>
@@ -29,7 +36,7 @@ export default class ArmPage extends Component{
                     <div className="row">
                         <div className="col-12">
                             <h2>Bicepsz</h2>
-                            <Link to="/biceps">
+                            <Link to="/biceps" onClick={this.scroolTop}>
                                 <img src={Bicepsz} alt="bicepsz" />
                             </Link>
                             <p>Itt a <b>Bicepsz</b> kap nagyobb figyelmet és az alkar</p>

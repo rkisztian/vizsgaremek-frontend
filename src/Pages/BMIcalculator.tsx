@@ -66,7 +66,7 @@ export default class BMIcalculator extends Component<{}, State> {
             <section className="BMIPage">
                 <form>
                     <h3>BMI kalkulátor</h3>
-                        <div className="form-outline-mb4">
+                        <div className="col-xx-xx">
                             <p> Kérem adja meg a magasságát centiméterben: <input type="number" onChange={this.magassag} /> </p>        
                         </div>
                         <div className="form-outline-mb4">

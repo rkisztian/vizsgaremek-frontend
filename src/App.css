@@ -99,14 +99,23 @@ p{
 .BMIPage form{
   box-shadow: 1px 1px 9px black;
   padding: 50px;
+  
+  
 }
 
 .BMIPage input {
-  padding-right: 10px;
+  padding-right: auto;
 }
 
 .BMIPage p {
   margin-left: 10px;
+}
+
+.BMIPage button{
+  margin: 5px;
+  border-radius: 5px;
+  font-family: Alkatra;
+  font-size: 19px;
 }
 
 table.center {

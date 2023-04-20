@@ -17,6 +17,9 @@ import { NavLink } from "react-router-dom";
 export default class Header extends Component<{}>{
 
 
+    /**
+     * Kijelentkezési lehetőség amikor a felhasználó kilép
+     */
     logout = async ()=>{
 
         let response= await fetch('http://localhost:3000/auth/logout',{
@@ -52,7 +55,7 @@ export default class Header extends Component<{}>{
                 </Nav>
             </Navbar.Collapse>
 
-            {localStorage.getItem('token') !== '' || localStorage.getItem('token') === null? <Nav>
+            {localStorage.getItem('token') === '' || localStorage.getItem('token') !== null? <Nav>
                 <NavbarCollapse>
                     <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
                     <button onClick={this.logout}>Kijelentkezés</button>

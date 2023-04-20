@@ -97,9 +97,9 @@ export default class RegisterPage extends Component<{}, State>{
         window.location.replace('/login')
       }
       else{
-        const res = await response.json() as ResponseMess
+        const responses = await response.json() as ResponseMess
         this.setState({
-          message: res.message,
+          message: responses.message,
           regError: true
         })
       }
