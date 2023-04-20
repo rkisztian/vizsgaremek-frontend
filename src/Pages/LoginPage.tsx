@@ -8,7 +8,6 @@ import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
 
 
-
 /**
  *  logEmail és LogPassword a bejelntekzéshez eltárolódnak
  *  Bejelentkezés során létrehoz egy Token a felhasználónak
@@ -79,6 +78,7 @@ export default class LoginPage extends Component<{}, State> {
                 })
                 localStorage.setItem('token', this.state.token)
                 this.dataStorage()
+                window.location.replace('/fooldal')
             }
         }
     }
@@ -96,6 +96,7 @@ export default class LoginPage extends Component<{}, State> {
         const data = await response.json() as userData
         localStorage.setItem('user.id', data.id.toString())
         localStorage.setItem('user.name', data.username)
+        localStorage.setItem('user.email', data.email)
     }
 
     render(){

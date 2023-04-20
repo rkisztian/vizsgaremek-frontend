@@ -11,6 +11,11 @@ import { Container } from "react-bootstrap";
 
 
 export default class HomePage extends Component {
+
+    scroolTop = () => { 
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
     render(){
 
         const data = [
@@ -55,6 +60,8 @@ export default class HomePage extends Component {
 
         ]
 
+        
+
         return <Container>
             <section className="fooldal">
             <br />
@@ -71,7 +78,7 @@ export default class HomePage extends Component {
                     </div>
                     <div className="col-4">
                         <Link to="/arm">
-                            <img src={izmok.image} alt={izmok.alt} />
+                            <img src={izmok.image} alt={izmok.alt} onClick={this.scroolTop}/>
                         </Link>
                     </div>
 

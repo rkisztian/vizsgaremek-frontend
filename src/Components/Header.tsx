@@ -5,7 +5,7 @@ import Logo from '../Images/sky_fitness_logo.png';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import { NavLink } from "react-router-dom";
-
+import userData from "../Pages/LoginPage";
 
 
 
@@ -40,14 +40,13 @@ export default class Header extends Component<{}>{
 
     return <section className="header">
         <Navbar expand="lg" collapseOnSelect>
-            <Navbar.Brand href="/"><img src={Logo} style={{width:"70%"}}/></Navbar.Brand>
+            <Navbar.Brand href="/fooldal"><img src={Logo} style={{width:"70%"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
 
                 <Nav className="me-ato">
-                    <Nav.Link href="/">Főoldal</Nav.Link>
+                    <Nav.Link href="/fooldal">Főoldal</Nav.Link>
                     <Nav.Link href="/rolunk">Rólunk</Nav.Link>
-                    <Nav.Link href="/kapcsolat">Kapcsolat</Nav.Link>
                     <NavDropdown title="Eszközök">
                         <NavDropdown.Item href="/kaloria">Kalória Kalkulátor</NavDropdown.Item>
                         <NavDropdown.Item href="/bmi">BMI Kalkulátor</NavDropdown.Item>
@@ -55,7 +54,7 @@ export default class Header extends Component<{}>{
                 </Nav>
             </Navbar.Collapse>
 
-            {localStorage.getItem('token') === '' || localStorage.getItem('token') !== null? <Nav>
+            {localStorage.getItem('token') !== '' || localStorage.getItem('token') === null? <Nav>
                 <NavbarCollapse>
                     <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
                     <button onClick={this.logout}>Kijelentkezés</button>

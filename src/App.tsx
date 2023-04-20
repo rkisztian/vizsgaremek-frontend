@@ -14,6 +14,7 @@ import Footer from './Components/Footer';
 import Biceps from './Pages/Exercises/Biceps';
 import ArmPage from './Pages/Exercises/Arm';
 import ProfilePage from './Pages/Profile';
+import Triceps from './Pages/Exercises/Triceps';
 
 
 interface State {
@@ -27,7 +28,7 @@ class App extends Component<{}, State> {
     return <div>
       <Header/>
         <Routes>
-          <Route path='/' element={<HomePage></HomePage>} />
+          <Route path='/fooldal' element={<HomePage></HomePage>} />
           <Route path='/kapcsolat' element={<ContactPage></ContactPage>} />
           <Route path='/rolunk' element={<AboutusPage></AboutusPage>} />
           
@@ -40,6 +41,8 @@ class App extends Component<{}, State> {
 
           <Route path='/arm' element={<ArmPage></ArmPage>} />
           <Route path='/biceps' element={<Biceps></Biceps>} />
+          <Route path='/triceps' element={<Triceps></Triceps>} />
+
         </Routes>
       <Footer />
     </div>

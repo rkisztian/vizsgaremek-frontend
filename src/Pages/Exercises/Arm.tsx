@@ -45,7 +45,7 @@ export default class ArmPage extends Component{
                             
                         <div className="col-12">
                             <h2>Tricepsz</h2>
-                            <Link to="/triceps">
+                            <Link to="/triceps" onClick={this.scroolTop}>
                                 <img src={Tricepsz} alt="bicepsz" />
                             </Link>
                             <p>Itt a háromfejű karizomról lesz szó, azaz a <b>tricepszről</b> </p>
