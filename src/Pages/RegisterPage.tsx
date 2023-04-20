@@ -38,75 +38,58 @@ export default class RegisterPage extends Component<{}, State>{
     }
   }
 
-  /**
-   * Validációt végez a frontend és a backend egyaránt
-   * Ha minden adat helyesen van kitltve akkor létre hoz egy usert
-   */
-  newUser = async (e: FormEvent) => {
+  registerHandle = async (e: FormEvent) => {
     e.preventDefault()
-    
-    
-    if(this.state.newUsername.trim() === ''){
-      this.setState({
-        message: ['Felhasználó név megadása kötelező!'],
-        regError: true
-      })
+    if(this.state.newUsername.trim() === '') {
+      this.setState({message: ['Kérem adja meg a felhasználó nevét']})
       return;
     }
-    else if (this.state.newPassword === '') {
-      this.setState({
-        message: ['Jelszó megadása kötelező'],
-        regError: true
-      })
+    else if(this.state.newEmail.trim() === '') {
+      this.setState({message: ['Email cím megadása kötelező']})
       return;
     }
-    else if (this.state.newPassword !== this.state.newPasswordAgain) {
-      this.setState({
-        message: ['A két jelszó nem egyezik meg'],
-        regError: true
-      })
+    else if(this.state.newPassword.trim() === '') {
+      this.setState({message: ['Jelszó megadása köteleő']})
       return;
     }
-    else {
-      const data = {
-        username : this.state.newUsername,
-        email: this.state.newEmail,
-        password: this.state.newPassword,
-        newPasswordAgain: this.state.newPasswordAgain
-      };
+    else if(this.state.newPassword !== this.state.newPasswordAgain) {
+      this.setState({message : ['A jelszó nem egyezik meg']})
+      return;
+    }
 
-      let response = await fetch('http://localhost:3000/auth/register',{
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
+    const data = {
+      "username": this.state.newUsername,
+      "email": this.state.newEmail,
+      "password": this.state.newPassword,
+      "passwordAgain": this.state.newPasswordAgain
+    };
+
+    let response = await fetch("http://localhost:3000/auth/register", {
+      method: 'POST',
+      headers:  {
+        "Content-Type": "application/json"
         },
-        body: JSON.stringify(data),
-      });
+      body: JSON.stringify(data),
+    });
 
-      if(response.ok){
-        this.setState({
-          newUsername: '',
-          newEmail: '',
-          newPassword: '',
-          newPasswordAgain: ''
-        })
-        this.setState({
-          regError: false,
-          reg: true
-        })
-        window.location.replace('/login')
-      }
-      else{
-        const responses = await response.json() as ResponseMess
-        this.setState({
-          message: responses.message,
-          regError: true
-        })
-      }
+    if(response.ok){
+      this.setState({
+        newUsername: '',
+        newEmail: '',
+        newPassword: '',
+        newPasswordAgain: '',
+        
+      })
+      this.setState({message: ['Sikeres regisztráció']})
+      window.location.replace('/login')
     }
-      
+    else{
+      const registers = await response.json() as ResponseMess
+      this.setState({message: registers.message})
+    }
   }
-    
+
+  
 
   render(){
     const {newUsername, newEmail, newPassword, newPasswordAgain} = this.state;
@@ -133,7 +116,7 @@ export default class RegisterPage extends Component<{}, State>{
           <p>Van már fiókod, jelentkez be  <Link to='/login'>Itt</Link> !</p>
         </div>
 
-        <button onClick={this.newUser} className="button" >Regisztáció</button>
+        <button onClick={this.registerHandle} className="button" >Regisztáció</button>
         {this.state.regError===true ? <div className="alert">{this.state.message}</div> : null}
         {this.state.reg=== true ? <div className="alert-success">Sikeres Regisztráció</div>: null}
 
