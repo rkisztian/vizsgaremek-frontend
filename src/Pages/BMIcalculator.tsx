@@ -2,6 +2,7 @@ import { ChangeEvent, Component, FormEvent } from "react";
 import Footer from "../Components/Footer";
 import Header from "../Components/Header";
 import "bootstrap/dist/css/bootstrap.css"
+import { Container } from "react-bootstrap";
 
 
 
@@ -61,7 +62,8 @@ export default class BMIcalculator extends Component<{}, State> {
     }
 
     render(){
-        return <div>
+        return<Container>
+            <div>
 
             <section className="BMIPage">
                 <form>
@@ -114,5 +116,6 @@ export default class BMIcalculator extends Component<{}, State> {
             </section>
             
         </div>
+        </Container> 
     }
 }
