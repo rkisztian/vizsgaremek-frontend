@@ -38,6 +38,11 @@ export default class RegisterPage extends Component<{}, State>{
     }
   }
 
+  /**
+   * A frontend és a backend validációt végezz
+   * Ha minden validálásnak megfelel akkor létrehoz egy uj felhasználót
+   * Regisztráció után át dob a login felületre
+   */
   registerHandle = async (e: FormEvent) => {
     e.preventDefault()
     if(this.state.newUsername.trim() === '') {
