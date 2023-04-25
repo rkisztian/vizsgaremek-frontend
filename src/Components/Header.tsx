@@ -4,7 +4,6 @@ import "bootstrap/dist/css/bootstrap.css"
 import Logo from '../Images/sky_fitness_logo.png';
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
-import { NavLink } from "react-router-dom";
 import userData from "../Pages/LoginPage";
 
 
@@ -29,9 +28,10 @@ export default class Header extends Component<{}>{
             }
         });
             if(response.ok){
-                localStorage.setItem('user.id', '')
+                localStorage.setItem('id', '')
                 localStorage.setItem('token','')
-                localStorage.setItem('user.name', '')
+                localStorage.setItem('username', '')
+                localStorage.setItem('useremail', '')
                 window.location.replace('/login')
             }
     }
@@ -40,12 +40,12 @@ export default class Header extends Component<{}>{
 
     return <section className="header">
         <Navbar expand="lg" collapseOnSelect>
-            <Navbar.Brand href="/fooldal"><img src={Logo} style={{width:"70%"}}/></Navbar.Brand>
+            <Navbar.Brand href="/"><img src={Logo} style={{width:"70%"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse>
 
                 <Nav className="me-ato">
-                    <Nav.Link href="/fooldal">Főoldal</Nav.Link>
+                    <Nav.Link href="/">Főoldal</Nav.Link>
                     <Nav.Link href="/rolunk">Rólunk</Nav.Link>
                     <NavDropdown title="Eszközök">
                         <NavDropdown.Item href="/kaloria">Kalória Kalkulátor</NavDropdown.Item>

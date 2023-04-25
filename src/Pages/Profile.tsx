@@ -2,10 +2,12 @@ import { Component, ReactNode } from "react";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../Images/sky_fitness_logo.png"
+import userData from "./LoginPage";
 
 interface State{
-    email: string,
-    username: string,
+    username: string;
+    email: string;
+    password: string;
 }
 
 
@@ -17,9 +19,12 @@ export default class ProfilePage extends Component<{}, State>{
         this.state=({
             email: '',
             username: '',
+            password: ''
         })
     }
 
+
+    
 
     render(): ReactNode {
         

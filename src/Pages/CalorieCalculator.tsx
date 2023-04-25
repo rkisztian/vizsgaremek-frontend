@@ -5,6 +5,10 @@ import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
 import { runInThisContext } from "vm";
 
+
+/**
+ * Felveszi az felhasználó adatait
+ */
 interface IState{
   suly: number,
   magassag: number,
@@ -30,6 +34,10 @@ export default class Caloriecalculator extends Component<{}, IState> {
       };
     }
 
+    /**
+     * 
+     * Ez felel azért, hogy leolvassa az adatokat amiket a beviteli mezőben írunk
+     */
     handleInputChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
       const { name, value } = event.target;
       this.setState(prevState => ({
@@ -41,6 +49,10 @@ export default class Caloriecalculator extends Component<{}, IState> {
 
     
 
+    /**
+     * 
+     * Kiszámolja a kalóriát az adatok alapján
+     */
     kaloriaSzamitas = (e: FormEvent) => {
       e.preventDefault()
 

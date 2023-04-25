@@ -28,7 +28,7 @@ class App extends Component<{}, State> {
     return <div>
       <Header/>
         <Routes>
-          <Route path='/fooldal' element={<HomePage></HomePage>} />
+          <Route path='/' element={<HomePage></HomePage>} />
           <Route path='/kapcsolat' element={<ContactPage></ContactPage>} />
           <Route path='/rolunk' element={<AboutusPage></AboutusPage>} />
           

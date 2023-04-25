@@ -1,11 +1,10 @@
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { TokenObj } from "../token";
-import Footer from "../Components/Footer";
-import Header from "../Components/Header";
 import Logo from '../Images/sky_fitness_logo.png';
 import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
+import { ResponseMess } from "../response";
 
 
 /**
@@ -68,17 +67,16 @@ export default class LoginPage extends Component<{}, State> {
             });
 
             if(response.ok){
-                const res= await response.json() as TokenObj
-
+                const res = await response.json() as ResponseMess
                 this.setState({
-                    logEmail: '',
-                    logPassword: '',
-                    token: res.token,
-                    message: ['Sikeres bejelentkezés']
+                    message: res.message,
                 })
-                localStorage.setItem('token', this.state.token)
+            }else{
+
+                const res = await response.json() as TokenObj
+                localStorage.setItem('token', res.token)
                 this.dataStorage()
-                window.location.replace('/fooldal')
+                window.location.replace('/')
             }
         }
     }
@@ -94,9 +92,9 @@ export default class LoginPage extends Component<{}, State> {
         })
         
         const data = await response.json() as userData
-        localStorage.setItem('user.id', data.id.toString())
-        localStorage.setItem('user.name', data.username)
-        localStorage.setItem('user.email', data.email)
+        localStorage.setItem('is', data.id.toString())
+        localStorage.setItem('username', data.username)
+        localStorage.setItem('useremail', data.email)
     }
 
     render(){
