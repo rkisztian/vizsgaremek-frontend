@@ -7,30 +7,66 @@ import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 import userData from "../Pages/LoginPage";
 
 
-
+interface State{
+    id: number;
+    username:string;
+    email:string;
+    token:string;
+}
 
 /**
  * Egy átlagos fejléc amit a react Nav-váal csináltam meg.
  * Bejelentkezéskor a fejléc megváltozik
  */
-export default class Header extends Component<{}>{
+export default class Header extends Component<{}, State>{
+    constructor(props:{}){
+        super(props)
+        this.state={
+            id:0,
+            username:'',
+            email:'',
+            token: window.localStorage.getItem("token")||''
+        }
+        this.changeState()
+    }
 
+    loadUser = async() =>{
+        if(localStorage.getItem('token')!=='' || localStorage.getItem('token')!==null){
+            let response = await fetch("http://localhost:3000/auth/finduser",{
+                method: "POST",
+                headers:{
+					"Content-Type": "application/json",
+					'Authorization': "Bearer " + this.state.token,
+				},
+            })
 
-    /**
-     * Kijelentkezési lehetőség amikor a felhasználó kilép
-     */
-    logout = async ()=>{
+            const data=await response.json()
+            return data
+        }
+    }
 
-        let response= await fetch('http://localhost:3000/auth/logout',{
-            method: 'DELETE',
+    changeState=async()=>{
+		let data=await this.loadUser()
+		this.setState({
+			id: data.id,
+			username: data.username,
+			email: data.email
+		})
+    }
+
+    logout = async() =>{
+        let response = await fetch("http://localhost:3000/auth/logout",{
+            method:'DELETE',
             headers:{
-                'Authorization':'Bearer '+ localStorage.getItem('token')
+                "Content-Type": "application/json",
+				'Authorization': "Bearer " + localStorage.getItem('token'),
             }
-        });
-            if(response.ok){
-                localStorage.setItem('token','')
-                window.location.replace('/login')
-            }
+        })
+        if(response.status===200){
+            localStorage.removeItem('token')
+            window.location.reload()
+        }
+
     }
     
     render(): ReactNode {
@@ -51,7 +87,7 @@ export default class Header extends Component<{}>{
                 </Nav>
             </Navbar.Collapse>
 
-            {localStorage.getItem('token') !== '' || localStorage.getItem('token') === null? <Nav>
+            {localStorage.getItem('token') === '' || localStorage.getItem('token') === null? <Nav>
                 <NavbarCollapse>
                     <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
                     <button onClick={this.logout}>Kijelentkezés</button>
