@@ -28,10 +28,7 @@ export default class Header extends Component<{}>{
             }
         });
             if(response.ok){
-                localStorage.setItem('id', '')
                 localStorage.setItem('token','')
-                localStorage.setItem('username', '')
-                localStorage.setItem('useremail', '')
                 window.location.replace('/login')
             }
     }

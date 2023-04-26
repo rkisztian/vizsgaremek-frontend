@@ -22,12 +22,6 @@ interface State{
  *  Responsebol kapott json objektumoit hoz létre
  */
 
-export default interface userData{
-    id: number;
-    username: string;
-    email: string;
-    password: string;
-}
 
 export default class LoginPage extends Component<{}, State> {
 
@@ -36,7 +30,7 @@ export default class LoginPage extends Component<{}, State> {
         this.state={
             logEmail: '',
             logPassword: '',
-            token: '',
+            token: window.localStorage.getItem("token")||'',
             message: [],
         }
     }
@@ -67,35 +61,17 @@ export default class LoginPage extends Component<{}, State> {
             });
 
             if(response.ok){
-                const res = await response.json() as ResponseMess
-                this.setState({
-                    message: res.message,
-                })
-            }else{
-
                 const res = await response.json() as TokenObj
+                this.setState({
+                    token: res.token
+                    
+                })
                 localStorage.setItem('token', res.token)
-                this.dataStorage()
                 window.location.replace('/')
             }
         }
     }
 
-    /**
-     * Localsoragben eltárolja a felhasználó adatait mint a nevét és az id-ját
-     * Kér egy tokent a backendtől és azt eltárolja
-     */
-    dataStorage = async ()=> {
-        let response= await fetch('http://localhost:3000/user/profile',{
-            headers: {'Authorization':'Bearer' + localStorage.getItem('token'),
-            'content-type':'application/json'}
-        })
-        
-        const data = await response.json() as userData
-        localStorage.setItem('is', data.id.toString())
-        localStorage.setItem('username', data.username)
-        localStorage.setItem('useremail', data.email)
-    }
 
     render(){
         const {logEmail, logPassword} = this.state;
