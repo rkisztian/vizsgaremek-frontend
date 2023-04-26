@@ -9,7 +9,7 @@ import { runInThisContext } from "vm";
 /**
  * Felveszi az felhasználó adatait
  */
-interface IState{
+interface State{
   suly: number,
   magassag: number,
   kor: number,
@@ -20,7 +20,7 @@ interface IState{
 
 }
 
-export default class Caloriecalculator extends Component<{}, IState> {
+export default class Caloriecalculator extends Component<{}, State> {
 
     constructor(props: {}) {
       super(props);
@@ -107,8 +107,8 @@ export default class Caloriecalculator extends Component<{}, IState> {
               Nem:
             <select name="nem" onChange={this.handleInputChange}>
               <option value="">Select</option>
-              <option value="male">Férfi</option>
-              <option value="female">Nő</option>
+              <option value="ferfi">Férfi</option>
+              <option value="no">Nő</option>
              </select>
             </label>
               <br />

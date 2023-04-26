@@ -87,20 +87,22 @@ export default class Header extends Component<{}, State>{
                 </Nav>
             </Navbar.Collapse>
 
-            {localStorage.getItem('token') === '' || localStorage.getItem('token') === null? <Nav>
-                <NavbarCollapse>
-                    <Nav.Link href="/profile">{localStorage.getItem('username')} Profil</Nav.Link>
-                    <button onClick={this.logout}>Kijelentkezés</button>
-                    
-                </NavbarCollapse>
-            </Nav>  
-            :
+            {localStorage.getItem('token') === '' || localStorage.getItem('token') === null? 
+            
             <Nav className="me-auto">
             <Navbar.Collapse className="justify-content-end">
                 <Nav.Link href="/register">Regisztráció</Nav.Link>
                 <Nav.Link href="/login">Bejelentkezés</Nav.Link>
             </Navbar.Collapse>
             </Nav>
+            :
+            <Nav>
+                <NavbarCollapse>
+                    <Nav.Link href="/profile">{localStorage.getItem('username')}</Nav.Link>
+                    <button onClick={this.logout}>Kijelentkezés</button>
+                    
+                </NavbarCollapse>
+            </Nav>  
             }
 
 

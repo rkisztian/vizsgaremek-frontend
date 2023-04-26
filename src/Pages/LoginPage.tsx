@@ -60,15 +60,20 @@ export default class LoginPage extends Component<{}, State> {
                 body: JSON.stringify(data),
             });
 
-            if(response.ok){
-                const res = await response.json() as TokenObj
+            if(response.status === 201){
+                const data = await response.json() as TokenObj
                 this.setState({
-                    token: res.token
-                    
+                    token: data.token,
+                    message: ['Sikeres bejelentkezés']
                 })
-                localStorage.setItem('token', res.token)
+                localStorage.setItem('token', data.token)
                 window.location.replace('/')
             }
+            else{
+                const res = await response.json()
+                this.setState({message: res.message})
+            } 
+
         }
     }
 
