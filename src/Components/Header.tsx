@@ -98,7 +98,7 @@ export default class Header extends Component<{}, State>{
             :
             <Nav>
                 <NavbarCollapse>
-                    <Nav.Link href="/profile">{localStorage.getItem('username')}</Nav.Link>
+                    <Nav.Link href="/profile">{this.state.username}</Nav.Link>
                     <button onClick={this.logout}>Kijelentkezés</button>
                     
                 </NavbarCollapse>
