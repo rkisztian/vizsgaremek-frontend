@@ -3,7 +3,6 @@ import './App.css';
 
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './Pages/HomePage';
-import ContactPage from './Pages/ContactPage';
 import AboutusPage from './Pages/AboutusPage';
 import Caloriecalculator from './Pages/CalorieCalculator';
 import BMIcalculator from './Pages/BMIcalculator';
@@ -29,7 +28,6 @@ class App extends Component<{}, State> {
       <Header/>
         <Routes>
           <Route path='/' element={<HomePage></HomePage>} />
-          <Route path='/kapcsolat' element={<ContactPage></ContactPage>} />
           <Route path='/rolunk' element={<AboutusPage></AboutusPage>} />
           
           <Route path='/kaloria' element={<Caloriecalculator></Caloriecalculator>} />

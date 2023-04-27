@@ -35,7 +35,9 @@
         }
 
     
-
+        /**
+         * Hozzá kapcsolódik a backenhez és id alapján kiíiirja a felhasználónak az adatait, kivéve a jelszót.
+         */
         loadUser = async() =>{
             if(localStorage.getItem('token')!=='' || localStorage.getItem('token')!==null){
                 let response = await fetch("http://localhost:3000/auth/finduser",{

@@ -30,6 +30,10 @@ export default class Header extends Component<{}, State>{
         this.changeState()
     }
 
+    /**
+     * 
+     * Bejelentkezéskor betölti a felhasználót és a token alapján megváltoztatja a headert a felhasználó nevére
+     */
     loadUser = async() =>{
         if(localStorage.getItem('token')!=='' || localStorage.getItem('token')!==null){
             let response = await fetch("http://localhost:3000/auth/finduser",{
@@ -54,6 +58,10 @@ export default class Header extends Component<{}, State>{
 		})
     }
 
+
+    /**
+     * Kijelentkezési lehetőség, ilyenkor törli az eltárolt adatokat a felhasználórol és a tokent is
+     */
     logout = async() =>{
         let response = await fetch("http://localhost:3000/auth/logout",{
             method:'DELETE',

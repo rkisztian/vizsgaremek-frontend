@@ -94,6 +94,43 @@ p{
 
 }
 
+/*-----Calorie Calculator*/
+
+.kaloria{
+  text-align: center;
+  margin: 60px;
+}
+
+.kaloria p{
+  font-size: 20px;
+}
+
+.kaloria h2{
+  padding: 20px;
+  font-size: 40px;
+}
+
+.kaloria span{
+  color:dodgerblue;
+}
+
+.kaloria form{
+  box-shadow: 1px 1px 9px black;
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.kaloria button{
+  margin-top: 20px;
+  border-radius: 5px;
+  font-family: Alkatra;
+  font-size: 19px;
+}
+
+.kaloria .title{
+  border-bottom: 2px solid black;
+}
+
 /*-----BMI Page-----*/
 
 .BMIPage {

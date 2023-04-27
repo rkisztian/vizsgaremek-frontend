@@ -36,7 +36,7 @@ export default class Caloriecalculator extends Component<{}, State> {
 
     /**
      * 
-     * Ez felel azért, hogy leolvassa az adatokat amiket a beviteli mezőben írunk
+     * Lehetővé teszi,hogy értelmezze az adatokat és tudjon vele számolni
      */
     handleInputChange = (event: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
       const { name, value } = event.target;
@@ -51,37 +51,38 @@ export default class Caloriecalculator extends Component<{}, State> {
 
     /**
      * 
-     * Kiszámolja a kalóriát az adatok alapján
+     * A felhasználó által megadott adatokat alapján kezd el számolni és írja ki a napi kalória bevitelt
+     * Az aktivitástól függöen változik a kalória bevitel
      */
     kaloriaSzamitas = (e: FormEvent) => {
       e.preventDefault()
 
-      const { suly, magassag, kor, nem, aktivitas} = this.state;
+      const { suly, magassag, kor, nem, aktivitas, napikaloria} = this.state;
       let napiKaloria = 0;
 
 
 
       if(nem  === 'ferfi') {
-        napiKaloria = 10 * suly + 6.25 * magassag - 5 * kor + 5;
+        napiKaloria = 150.46+(13.7*suly)+(5*magassag)-(6.8*kor);
       } else if(nem === 'no') {
-        napiKaloria = 10 * suly + 6.25 * magassag - 5 * kor - 161;
+        napiKaloria = 120.1+(9.67*suly)+ (1.8 * magassag) - (4.7*kor);
       }
 
 
       if(aktivitas === 'ulomunka') {
-        napiKaloria *= 1.2;
+        napiKaloria *= 12;
       }
       else if(aktivitas === "enyhenAktiv"){
-        napiKaloria *= 1.375;
+        napiKaloria *= 13;
       }
       else if(aktivitas === "mersekeltenAktiv"){
-        napiKaloria *= 1.375;
+        napiKaloria *= 15;
       }
       else if(aktivitas === "nagyonAktiv"){
-        napiKaloria *= 1.375;
+        napiKaloria *= 17;
       }
       else if(aktivitas === "extraAktiv"){
-        napiKaloria *= 1.375;
+        napiKaloria *= 19;
       }
 
       this.setState({ napikaloria : napiKaloria });
@@ -91,44 +92,51 @@ export default class Caloriecalculator extends Component<{}, State> {
     render(){
         const { suly, magassag, nem, kor, aktivitas, napikaloria } = this.state;
         return <Container>
-          <form>
-            <h3>Kalória kalkulátor</h3>
-            <div className="col-xx-xx">
-                  <p> Kérem adja meg a magasságát centiméterben: <input type="number"   onChange={this.handleInputChange} /> </p>        
-            </div>
-            <div className="form-outline-mb4">
-                  <p> Kérem adja meg a testsúlyát kilogrammban : <input type="number"  onChange={this.handleInputChange} /></p>
-            </div>
-            <div className="form-outline-mb4">
-                  <p> Kérem adja meg a korát : <input type="number"  onChange={this.handleInputChange} /></p>
-            </div>
+          <section className="kaloria">
+              <form >
+                  <h3>Kalória kalkulátor</h3>
+                  <p className="title">A Napi kalória a BMR számolja ki és azt szorozza be a megadott aktivitással</p>
+                  <div className="col-xx-xx">
+                        <p> Kérem adja meg a magasságát centiméterben: <input type="number"   onChange={this.handleInputChange} /> </p>        
+                  </div>
+                  <div className="form-outline-mb4">
+                        <p> Kérem adja meg a testsúlyát kilogrammban : <input type="number"  onChange={this.handleInputChange} /></p>
+                  </div>
+                  <div className="form-outline-mb4">
+                        <p> Kérem adja meg a korát : <input type="number"  onChange={this.handleInputChange} /></p>
+                  </div>
 
-            <label>
-              Nem:
-            <select name="nem" onChange={this.handleInputChange}>
-              <option value="">Select</option>
-              <option value="ferfi">Férfi</option>
-              <option value="no">Nő</option>
-             </select>
-            </label>
-              <br />
-            <label>
-              <select name="aktivitas" onChange={this.handleInputChange}>
-                <option value="">Select</option>
-                <option value="ulomunka">Ülőmunka</option>
-                <option value="enyhenAktiv">Enyhén aktív</option>
-                <option value="mersekeltenAktiv">Mérsékelten aktív</option>
-                <option value="nagyonAktiv">Nagyon aktív</option>
-                <option value="extraAktiv">Extra aktív</option>
+                  <label>
+                    <p>Nem</p>
+                    
+                  <select name="nem" onChange={this.handleInputChange}>
+                    <option value="">Select</option>
+                    <option value="ferfi">Férfi</option>
+                    <option value="no">Nő</option>
+                  </select>
+                  </label>
+                    <br />
+                  <label>
+                    <p>Aktivitás</p>
+                    <select name="aktivitas" onChange={this.handleInputChange}>
+                      <option value="">Select</option>
+                      <option value="ulomunka">Ülőmunka</option>
+                      <option value="enyhenAktiv">Enyhén aktív</option>
+                      <option value="mersekeltenAktiv">Mérsékelten aktív</option>
+                      <option value="nagyonAktiv">Nagyon aktív</option>
+                      <option value="extraAktiv">Extra aktív</option>
 
-              </select>
+                    </select>
 
-            </label>
-            <br />
-            <button onClick={this.kaloriaSzamitas}>Számítás</button>
+                  </label>
+                  <br />
+                  <button onClick={this.kaloriaSzamitas}>Számítás</button>
           </form>
 
           <h2>Az ön napi kalória fogyasztásának ennyinek kell lennie: <span>{napikaloria}</span></h2>
+          </section>
+
+          
         </Container>
     }
 }

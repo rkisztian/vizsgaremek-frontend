@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
 
 
-
+/**
+ * Felveszi a megadott adatok a felhasználóktól és azzal számol
+ */
 interface State{
     magassag: number;
     suly: number;
@@ -14,9 +16,6 @@ interface State{
     idealisMaxTomeg: number;
 }
 
-/**
- * Egy teljesen egyszerű BMI kalkulátor
- */
 export default class BMIcalculator extends Component<{}, State> {
 
     constructor(props: {}) {
@@ -30,6 +29,10 @@ export default class BMIcalculator extends Component<{}, State> {
         }
     }
 
+    /**
+     * 
+     * Ez teszi lehetővé, hogy a megadott adatot értelmezni tudja
+     */
     suly = (e: ChangeEvent) => {
         let tempSuly = (e.currentTarget as HTMLInputElement).value;
         this.setState({

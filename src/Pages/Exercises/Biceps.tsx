@@ -25,7 +25,7 @@ export default class Biceps extends Component<{}, State> {
 
 
     /**
-     * Ez teszi lehetővé, hogy megjelenítse a gyakorlatokat
+     * Ez teszi lehetővé, hogy megjelenítse a gyakorlatokat a weboldan
      */
     async loadGyakorlatok(){
         let response = await fetch('http://localhost:3000/gyakorlatok/list')
