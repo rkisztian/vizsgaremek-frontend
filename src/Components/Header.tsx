@@ -15,7 +15,7 @@ interface State{
 }
 
 /**
- * Egy átlagos fejléc amit a react Nav-váal csináltam meg.
+ * Egy átlagos fejléc amit a react Nav-val csináltam meg.
  * Bejelentkezéskor a fejléc megváltozik
  */
 export default class Header extends Component<{}, State>{
@@ -60,7 +60,7 @@ export default class Header extends Component<{}, State>{
 
 
     /**
-     * Kijelentkezési lehetőség, ilyenkor törli az eltárolt adatokat a felhasználórol és a tokent is
+     * Kijelentkezési lehetőség, ilyenkor törli az eltárolt adatokat a felhasználórol és a tokent is, és a header megváltozik
      */
     logout = async() =>{
         let response = await fetch("http://localhost:3000/auth/logout",{

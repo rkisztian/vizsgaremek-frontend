@@ -16,12 +16,6 @@ interface State{
     logPassword: string;
     token: string;
 }
-
-/**
- *  Responsebol kapott json objektumoit hoz létre
- */
-
-
 export default class LoginPage extends Component<{}, State> {
 
     constructor(props: {}){
@@ -33,8 +27,6 @@ export default class LoginPage extends Component<{}, State> {
             message: [],
         }
     }
-
-
 
     /**
      * Az adatok validálását hajtja végre backend és frontenden egyaránt

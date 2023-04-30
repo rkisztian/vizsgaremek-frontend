@@ -75,7 +75,6 @@ export default class Triceps extends Component {
                         {data.map((gyakorlat) => {
                             return(
                                 <div className="gyakorlatok">
-                                    
                                     <div className="container">
                                         <h2>{gyakorlat.name}</h2>
                                         <div className="row">

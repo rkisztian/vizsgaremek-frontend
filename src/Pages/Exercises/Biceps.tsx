@@ -68,7 +68,6 @@ export default class Biceps extends Component<{}, State> {
                         {this.state.gyakorlatok.map((gyakorlat) => {
                             return(
                                 <div className="gyakorlatok">
-                                    
                                     <div className="container">
                                         <h2>{gyakorlat.name}</h2>
                                         <div className="row">

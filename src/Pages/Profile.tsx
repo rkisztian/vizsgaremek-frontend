@@ -66,11 +66,6 @@
 
 
         render(): ReactNode {
-
-
-
-
-            
             return<Container>
                 <section className="userData">
                     <div className="container">
@@ -84,20 +79,9 @@
                             <br/>
                             
                         </div>
-
-                        <div className="col-6">
-                        
-                        </div>
                     </div>
                 </div>
                 </section>
-
-            
-                
-                
-
-
-
                 <div className="Profile">
                     
                     <h1>Töltsd le a mobil applikációnkat Android eszközödre itt:</h1>

@@ -5,11 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import { Container } from "react-bootstrap";
 import Logo from "../Images/sky_fitness_logo.png"
 
-interface State{
-
-}
-
-export default class AboutusPage extends Component<{}, State> {
+export default class AboutusPage extends Component{
 
 
     render(){

@@ -22,11 +22,14 @@ export default class ArmPage extends Component{
         return<Container>
             <section className="arms">
             <br />
+
             <div className='parallax1'>
                 <h2>Kar edzések a nagyobb Karokért | A legjobb karizom gyakorlatok</h2>
             </div>
+
             <br />
             <h2>Kar gyakorlatok</h2>
+
             <div className="karizmok">
                 <div className="container">
                     <p>A kar edzés egy fogalom amit több kicsi részletre lehet bontani. 
@@ -34,6 +37,7 @@ export default class ArmPage extends Component{
                         <b>rövid (Belső) fej</b> és <b>hosszu (Külső) fej</b>  a bicepsznél. 
                         Itt a lehető leghatásosabb gyakorlatokat gyűjtöttük össze nektek amik hozzájárulnak ahoz, hogy minél <b>nagyobb</b> karotok legyen.</p>
                     <div className="row">
+
                         <div className="col-12">
                             <h2>Bicepsz</h2>
                             <Link to="/biceps" onClick={this.scroolTop}>
@@ -41,8 +45,7 @@ export default class ArmPage extends Component{
                             </Link>
                             <p>Itt a <b>Bicepsz</b> kap nagyobb figyelmet és az alkar</p>
                         </div>
-
-                            
+                        
                         <div className="col-12">
                             <h2>Tricepsz</h2>
                             <Link to="/triceps" onClick={this.scroolTop}>
